@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'flipxo'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6F163330CEA94CF0ABDAE0B0E8FA4025 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_48ED019B73EA49CF8F34E89A87BE9964 }}
           package: .
