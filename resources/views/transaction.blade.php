@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Transaction Details - Bazzar Bank</title>
-    <link rel="stylesheet" href={{ url("assets/bootstrap/css/bootstrap.min.css") }}>
+    <link rel="stylesheet" href={{ asset("assets/bootstrap/css/bootstrap.min.css", env("secure")) }}>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
-    <link rel="stylesheet" href={{ url("assets/fonts/font-awesome.min.css") }}>
-    <link rel="stylesheet" href={{ url("assets/fonts/ionicons.min.css") }}>
-    <link rel="stylesheet" href={{ url("assets/css/Footer-Dark.css") }}>
-    <link rel="stylesheet" href={{ url("assets/bootstrap/css/Login-Form-Dark.css") }}>
+    <link rel="stylesheet" href={{ asset("assets/fonts/font-awesome.min.css", env("secure")) }}>
+    <link rel="stylesheet" href={{ asset("assets/fonts/ionicons.min.css", env("secure")) }}>
+    <link rel="stylesheet" href={{ asset("assets/css/Footer-Dark.css", env("secure")) }}>
+    <link rel="stylesheet" href={{ asset("assets/bootstrap/css/Login-Form-Dark.css", env("secure")) }}>
 </head>
 
 <body id="page-top">
@@ -34,7 +34,7 @@
         <div class="container">
             
                 <div class="intro-lead-in" style="font-size: 50px; font-family: 'Times New Roman', Times, serif;position: absolute;left:550px;top:120px;color:White">
-                    <span><b><img src={{ url("assets/fonts/exchange-alt-solid.svg") }} alt="img-error" height="100">&nbsp;&nbsp; All Transactions</b></span></div>
+                    <span><b><img src={{ asset("assets/fonts/exchange-alt-solid.svg", env("secure")) }} alt="img-error" height="100">&nbsp;&nbsp; All Transactions</b></span></div>
                 <!--<div class="intro-heading text-uppercase"><span>It's Nice To Meet You</span></div>
                 <a style="border-radius: 36px;position: absolute;left:1400px;top:700px"class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="#services">Send Money</a>-->
             
@@ -45,10 +45,10 @@
                     @foreach($tansactions as $trans)
                     <div class="col-sm-6 col-md-4 item">
                         @if($trans['payment_done'])
-                        <img src={{ url("assets/fonts/success.svg") }} height="60px" width="60px" stylt="padding:100px">
+                        <img src={{ asset("assets/fonts/success.svg", env("secure")) }} height="60px" width="60px" stylt="padding:100px">
 
                         @else
-                        <img src={{ url("assets/fonts/fail.svg") }} height="60px" width="60px" stylt="padding:100px">
+                        <img src={{ asset("assets/fonts/fail.svg", env("secure")) }} height="60px" width="60px" stylt="padding:100px">
                         @endif
                         <h3 class="name" style="font-size:18px;">{{ $trans['sender_upi'] }}</h3>
                         <h3 class="name"style="font-size:18px;">{{ $trans['receiver_upi'] }}</h3>
@@ -98,10 +98,10 @@
         </div>
     </footer>
 
-    <script src={{ url("assets/js/jquery.min.js") }}></script>
-    <script src={{ url("assets/bootstrap/js/bootstrap.min.js") }}></script>
+    <script src={{ asset("assets/js/jquery.min.js", env("secure")) }}></script>
+    <script src={{ asset("assets/bootstrap/js/bootstrap.min.js", env("secure")) }}></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src={{ url("assets/js/agency.js") }}></script>
+    <script src={{ asset("assets/js/agency.js", env("secure")) }}></script>
 </body>
 
 </html>
