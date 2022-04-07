@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Bazzar Bank</title>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href={{ url("assets/bootstrap/css/bootstrap.min.css") }}>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href={{ url("assets/fonts/font-awesome.min.css") }}>
 </head>
 
 <body id="page-top">
@@ -32,15 +32,15 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-4"><span class="fa-stack fa-4x"><img class="svg" src="assets/fonts/hand-holding-usd-solid.svg" alt="img-error"height="150"></span>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><img class="svg" src={{ url("assets/fonts/hand-holding-usd-solid.svg") }} alt="img-error"height="150"></span>
                     <a href="/transfer"><h4 class="section-heading"style="padding: 50px;">Money Transfer</h4></a>
                     <!--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>-->
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><img class="svg"  src="assets/fonts/user-solid.svg" alt="img-error" height="150"></span>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><img class="svg"  src={{ url("assets/fonts/user-solid.svg") }} alt="img-error" height="150"></span>
                     <a href="/holder"><h4 class="section-heading"style="padding: 50px;">Account Holders</h4></a>
                     <!--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>-->
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><img class="svg" src="assets/fonts/exchange-alt-solid.svg" alt="img-error"height="150"></span>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><img class="svg" src={{ url("assets/fonts/exchange-alt-solid.svg") }} alt="img-error"height="150"></span>
                     <a href="/transaction"><h4 class="section-heading"style="padding: 50px;">All Transactions</h4><a>
                     <!--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>-->
                 </div>
@@ -78,10 +78,10 @@
         </div>
     </section>
     @include('footer')
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src={{ url("assets/js/jquery.min.js") }}></script>
+    <script src={{ url("assets/bootstrap/js/bootstrap.min.js") }}></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="assets/js/agency.js"></script>
+    <script src={{ url("assets/js/agency.js") }}></script>
 </body>
 
 </html>
