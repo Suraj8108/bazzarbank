@@ -31,3 +31,4 @@ Route::get('/transaction',[BankServices::class,'display_transaction']);
 Route::post('/check_sender_upi',[BankServices::class,'check_sender']);
 Route::post('/check_receiver_upi',[BankServices::class,'check_receiver']);
 Route::post('/check_amount',[BankServices::class,'check_amount']);
+Route::post('/check_pin',[BankServices::class,'check_pin']);

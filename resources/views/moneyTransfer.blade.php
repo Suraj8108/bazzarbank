@@ -44,21 +44,33 @@
                     <div class="container text-center">
                     <form action="/afterpayement" method="POST">
                         <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-                        <script
-                            src="https://checkout.razorpay.com/v1/checkout.js"
-                            data-key="{{ env('RAZORPAY_KEY') }}"
-                            data-amount="{{ Session::get('amount') }}" 
-                            data-currency="INR"
-                            data-order_id="{{ Session::get('orderId') }}"
-                            data-buttontext="Pay with Razorpay"
-                            data-name="Bazzar Bank"
-                            data-description="Powering your future Ideas and vision"
-                            data-image="{{ asset('assets/img/bazzarbank.jpeg', env('secure')) }}"
-                            data-theme.color="#F37254"
-                        ></script>
-                        <input type="hidden" custom="Hidden Element" name="hidden">
-                        <a class="forgot" href="#">Don't refresh a page. </a>
-                        {{ session()->forget('orderId')}}
+                        @if (Session::get('verify') == "0")
+                            <a>{{ Session::get('sender') }}</a>
+                            <div class="form-group" style="padding:30px ;">
+                                <input style="width: 150px; text-align: center;margin-right:auto; margin-left:auto;" class="form-control" type="password" name="pin" placeholder="UPI Pin" size="4" required>
+                                <span style="color:red"id="pin_result"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary btn-block" id="validate">Validate</button>
+                            </div>
+                            {{-- {{ Session::put('verify', "1") }} --}}
+                        @else
+                            <script
+                                src="https://checkout.razorpay.com/v1/checkout.js"
+                                data-key="{{ env('RAZORPAY_KEY') }}"
+                                data-amount="{{ Session::get('amount') }}" 
+                                data-currency="INR"
+                                data-order_id="{{ Session::get('orderId') }}"
+                                data-buttontext="Pay with Razorpay"
+                                data-name="Bazzar Bank"
+                                data-description="Powering your future Ideas and vision"
+                                data-image="{{ asset('assets/img/bazzarbank.jpeg', env('secure')) }}"
+                                data-theme.color="#F37254"
+                            ></script>
+                            <input type="hidden" custom="Hidden Element" name="hidden">
+                            <a class="forgot" href="#">Don't refresh a page. </a>
+                            {{ session()->forget('orderId')}}
+                        @endif
                         </form>
                     </div>
                     
@@ -86,7 +98,8 @@
                             <input class="form-control" type="number" id="amount" name="amount" placeholder="Amount in Rs(₹)" required>
                             <span style="color:red"id="amount_result"></span>
                         </div>
-                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send Money</button></div><a class="forgot" href="#">Terms & Conditions Applied </a>
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send Money</button></div>
+                    <a class="forgot" href="#">Terms & Conditions Applied </a>
                     
                 </form>
                 @endif
@@ -185,6 +198,29 @@ input[type=number] {
                 $('#amount_result').html("Enter right amount");
             }
             
+        });
+
+        $("#validate").click(function () {
+            var pin = $('input[name="pin"]').val();
+            if(pin > 999){
+                $.ajax({
+                    url:"<?php array('url');?>/check_pin",
+                    method:'post',
+                    data: {pin:pin, _token: '{{csrf_token()}}'},
+                    success:function(data){
+                        if(data){
+                            console.log("data");
+                            window.location.reload();    
+                        }
+                        else{
+                            $('#pin_result').html("Enter correct PIN");            
+                        }
+                    }
+                });
+            }
+            else{
+                $('#pin_result').html("Enter correct PIN");
+            }
         });
         
 

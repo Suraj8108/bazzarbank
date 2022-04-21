@@ -46,6 +46,7 @@ class BankServices extends Controller
         Session::put('amount',$amount);
         Session::put('sender',$sender_upi);
         Session::put('receiver',$receiver_upi);
+        Session::put('verify',"0");
         return redirect('/transfer');
 
     }
@@ -99,6 +100,24 @@ class BankServices extends Controller
         }
         else{
             return "Enter a valid UPI_ID";
+        }
+    }
+
+    function check_pin(Request $req){
+        $sender_upi = Session::get('sender');
+        $pin = $req['pin'];
+        $sender = accholder::where('upi_id',$sender_upi)->first();
+        if($sender){
+            if($sender['upi_pin'] == $pin){
+                Session::put("verify", "1");
+                return "true";
+            }
+            else{
+                return "false";
+            }
+        }
+        else{
+            return "false";
         }
     }
 
