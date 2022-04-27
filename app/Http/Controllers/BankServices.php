@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PaymentMail;
 use App\Models\accholder;
 use App\Models\Payment;
 use Razorpay\Api\Api;
@@ -70,6 +72,8 @@ class BankServices extends Controller
         $user->payment_done = true;
         $user->razorpay_id = $data['razorpay_payment_id'];
         $user->save();
+
+        Mail::to($sender)->send(new PaymentMail($sender_update, $user));
         session()->flush();
 
         return view('success');
