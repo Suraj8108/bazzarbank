@@ -8,6 +8,7 @@ BazzarBank is an application that manages account holder payments and tracks the
 
 ## Demo Video 🎥
 Check out the demo video of the application on LinkedIn.
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6810547385635225600" height="711" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 
 ## Features ✨
 - **Secure Payments**: Ensures all transactions are secure and encrypted.
