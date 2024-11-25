@@ -7,8 +7,8 @@ BazzarBank is an application that manages account holder payments and tracks the
 - **RazorPay Payment Gateway**: Integrated for handling secure and efficient payment transactions.
 
 ## Demo Video 🎥
-Check out the demo video of the application on LinkedIn.
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6810547385635225600" height="711" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+Check out the demo video of the application on [LinkedIn](https://www.linkedin.com/posts/suraj8108_gripjune2021-gripjune21-webdevelopment-activity-6810547644704804864-zcsL?utm_source=share&utm_medium=member_desktop).
+
 
 ## Features ✨
 - **Secure Payments**: Ensures all transactions are secure and encrypted.
